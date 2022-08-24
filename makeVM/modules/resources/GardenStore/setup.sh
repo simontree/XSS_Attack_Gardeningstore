@@ -36,10 +36,10 @@ npm i
 # Start Servers
 printf "\n--Start Server Backend\n"
 cd ../backend
-npm run start &
+npm run start
 
-printf "\n--Start Server Frontend\n"
-cd ../frontend
-npm run start &
+#printf "\n--Start Server Frontend\n"
+#cd ../frontend
+#npm run start &
 
 printf '\n--GardenStore is up.\n'

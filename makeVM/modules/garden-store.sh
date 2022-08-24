@@ -4,6 +4,7 @@ USER_DIR_NAME="mario"
 
 vboxmanage modifyvm ${VMNAME} --natpf1 "GardenStore,tcp,,3000,,3000"
 vboxmanage modifyvm ${VMNAME} --natpf1 "GardenStoreBackend,tcp,,8000,,8000"
+vboxmanage modifyvm ${VMNAME} --natpf1 "GardenStoreSQL,tcp,,3306,,3306"
 vboxmanage startvm ${VMNAME} --type headless
 echo "Waiting for VM to come up..."
 sleep 8
