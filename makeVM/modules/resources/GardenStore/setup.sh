@@ -17,18 +17,16 @@ mysql << EOF
 create database sys;
 create user mario@localhost identified by 'Its4321?!';
 grant all privileges on sys.* to mario@localhost;
-flush privileges;
-EOF
+exit
+mysql -p sys < create_tables.sql
+Its4321?!       # enter password to execute sql-file
+mysql -p sys < INSERT_products_users.sql
+Its4321?!       # enter password to execute sql-file
+mysql -p sys < INSERT_comments.sql
+Its4321?!       # enter password to execute sql-file
 
-printf "\n--Fill DB\n"
-mysql --password=$DB_PW sys < create_tables.sql
-mysql --password=$DB_PW sys < INSERT_products_users.sql
-#CREATES KEY ERROR:
-#mysql --password=$DB_PW sys < INSERT_comments.sql
-
-# Install dependencies 
-printf "\n--Install dependencies\n"
-cd ..
+cd backend
+#install dependencies backend
 npm i
 cd ../frontend
 npm i
